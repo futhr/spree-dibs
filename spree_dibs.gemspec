@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_dibs'
   s.version     = '2.0.3'
-  s.summary     = 'DIBS Payment Gateway for Spree Commerce'
+  s.summary     = 'Spree Payment Gateway for DIBS'
   s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
 

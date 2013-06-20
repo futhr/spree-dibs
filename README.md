@@ -1,6 +1,6 @@
 ![DIBS Logo][1]
 
-# DIBS Payment Gateway for Spree
+# Spree Payment Gateway for DIBS
 
 [![Dependency Status](https://gemnasium.com/futhr/spree-dibs.png)](https://gemnasium.com/futhr/spree-dibs)
 
