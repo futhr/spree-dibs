@@ -43,6 +43,14 @@ describe Spree::Gateway::Dibs do
     }
   end
 
+  it "provider_class" do
+    @gateway.provider_class.should eq ActiveMerchant::Billing::DibsGateway
+  end
+
+  it "actions" do
+    @gateway.actions.should match_array(['authorize', 'capture', 'refund', 'credit', 'void'])
+  end
+
   context "authorize" do
     it "return a success" do
       result = @gateway.authorize(10, @credit_card, @options)
