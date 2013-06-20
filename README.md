@@ -18,7 +18,7 @@ gem 'activemerchant', github: 'futhr/active_merchant', branch: 'dibspayment'
 ### Heroku SSL gotcha
 
 To make this work if you deploy on Heroku you need to add this to your Rails app in `config/initialzers/dibs.rb`.
-You also need to include this to make your tests pass.
+You also need to include this code snippet to make your tests pass.
 
 ```ruby
 require 'net/http'
@@ -54,7 +54,7 @@ Here are some ways *you* can contribute:
 
 Starting point:
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against. Make sure to create `spec/support/config.yml` from the sample file and modify the merchantid and hmackey variables from your DIBS account information.
+Be sure to bundle your dependencies and then create a dummy test app for the specs to run against. Make sure to create `spec/support/config.yml` from the sample file and modify the `merchantid` and `hmackey` variables from your DIBS account information.
 
 * Fork the repo
 * Clone your repo
