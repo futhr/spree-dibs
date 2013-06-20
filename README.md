@@ -1,25 +1,77 @@
-DIBS Payment Gateway for Spree 2.0.X
-====================================
+![DIBS Logo][1]
 
-Installation
-------------
+# DIBS Payment Gateway for Spree Commerce
+
+[![Dependency Status](https://gemnasium.com/futhr/spree-dibs.png)](https://gemnasium.com/futhr/spree-dibs)
+
+[DIBS Payment Services][2], the largest provider of Internet payment solutions in Northern Europe.
+
+## Installation
 
 Add spree_dibs and this branch of active merchant to your Gemfile:
 
 ```ruby
-gem 'spree_dibs', github: 'freerunningtechnologies/spree-dibs'
-gem 'activemerchant', github: 'maxwhite/active_merchant', branch: 'dibspayment'
+gem 'spree_dibs', github: 'futhr/spree-dibs'
+gem 'activemerchant', github: 'futhr/active_merchant', branch: 'dibspayment'
 ```
 
-Testing
--------
+### Heroku SSL gotcha
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against. Make sure to edit spec/models/gateway/dibs.rb and modify the login and password variables to use your DIBS account information.
+To make this work if you deploy on Heroku you need to add this to your Rails app in `config/initialzers/dibs.rb`
 
-```shell
-bundle
-bundle exec rake test_app
-bundle exec rspec spec
+```ruby
+require 'net/http'
+
+Net::HTTP.class_eval do
+  def do_start
+    # Start Hack
+    @ssl_version = :SSLv3 if @address =~ /.*\.dibspayment\.com/
+    # PREPARE', End Hack
+    connect
+    @started = true
+  end
+end
 ```
 
-Copyright (c) 2013 FreeRunning Technologies & Tobias Bohwalli, released under the New BSD License
+Thanks! [@DylanJ][7] for this hack :)
+
+## Contributing
+
+In the spirit of [free software][3], **everyone** is encouraged to help improve this project.
+
+Here are some ways *you* can contribute:
+
+* by using prerelease versions
+* by reporting [bugs][4]
+* by suggesting new features
+* by writing or editing documentation
+* by writing specifications
+* by writing code (*no patch is too small*: fix typos, add comments, clean up inconsistent whitespace)
+* by refactoring code
+* by resolving [issues][4]
+* by reviewing patches
+
+Starting point:
+
+Be sure to bundle your dependencies and then create a dummy test app for the specs to run against. Make sure to edit `spec/models/gateway/dibs.rb` and modify the login and password variables to use your DIBS account information.
+
+* Fork the repo
+* Clone your repo
+* Run `bundle`
+* Add config for *your* DIBS account
+* Run `bundle exec rake test_app` to create the test application in `spec/test_app`
+* Make your changes and follow this [Style Guide][5]
+* Ensure specs pass by running `bundle exec rspec spec`
+* Submit your pull request
+
+Copyright (c) 2013 [FreeRunning Technologies][8] & [Tobias Bohwalli][9], released under the [New BSD License][6]
+
+[1]: https://raw.github.com/futhr/spree-dibs/master/dibs.png
+[2]: http://www.dibspayment.com
+[3]: http://www.fsf.org/licensing/essays/free-sw.html
+[4]: https://github.com/futhr/spree-dibs/issues
+[5]: https://github.com/thoughtbot/guide
+[6]: https://github.com/futhr/spree-dibs/tree/master/LICENSE
+[7]: https://github.com/DylanJ
+[8]: https://github.com/freerunningtechnologies
+[9]: https://github.com/futhr
