@@ -1,21 +1,24 @@
-# encoding: UTF-8
+# coding: utf-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_dibs'
   s.version     = '2.0.3'
-  s.summary     = 'DIBS Payment Gateway'
+  s.summary     = 'DIBS Payment Gateway for Spree Commerce'
+  s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'FreeRunning Technologies'
   s.email     = 'contact@freerunningtech.com'
   s.homepage  = 'http://freerunningtech.com'
+  s.license   = 'BSD'
 
   #s.files       = `git ls-files`.split("\n")
-  #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
+  #s.test_files  = `git ls-files -- spec/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.0.3'
+  s.add_runtime_dependency 'spree_core', '~> 2.0.3'
+
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'database_cleaner'
