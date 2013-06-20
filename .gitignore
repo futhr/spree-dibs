@@ -13,3 +13,4 @@ pkg
 *.swp
 spec/dummy
 .rvmrc
+spec/support/config.yml

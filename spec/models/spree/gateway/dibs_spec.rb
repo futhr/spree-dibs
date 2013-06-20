@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Spree::Gateway::Dibs do
 
   # you must use your own dibs account for these tests.
-  let(:login) { change_me }
-  let(:password) { change_me }
+  let(:login) { DIBS_CONFIG['merchantid'] }
+  let(:password) { DIBS_CONFIG['hmackey'] }
 
   before do
     @gateway = Spree::Gateway::Dibs.create!(name: "DIBS", environment: "test", active: true)
