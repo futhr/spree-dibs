@@ -44,11 +44,18 @@ describe Spree::Gateway::Dibs do
   end
 
   it "provider_class" do
-    @gateway.provider_class.should eq ActiveMerchant::Billing::DibsGateway
+    @gateway.provider_class.should eq ::ActiveMerchant::Billing::DibsGateway
   end
 
   it "actions" do
     @gateway.actions.should match_array(['authorize', 'capture', 'refund', 'credit', 'void'])
+  end
+
+  context "with bad parameters" do
+    it "throw an exception" do
+      params = @credit_card.delete(:cardno)
+      expect { @gateway.authorize(10, @credit_card, @options) }.to raise_error
+    end
   end
 
   context "authorize" do
