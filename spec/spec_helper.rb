@@ -25,9 +25,7 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::UrlHelpers
 
   config.mock_with :rspec
-  config.color = true
   config.use_transactional_fixtures = false
-  config.fail_fast = ENV['FAIL_FAST'] || false
 
   config.before :suite do
     DatabaseCleaner.strategy = :transaction

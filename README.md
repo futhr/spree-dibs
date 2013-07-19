@@ -58,7 +58,7 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
 
 * Fork the repo
 * Clone your repo
-* Run `bundle`
+* Run `bundle install`
 * Add config for *your* DIBS account
 * Run `bundle exec rake test_app` to create the test application in `spec/test_app`
 * Make your changes and follow this [Style Guide][5]
@@ -72,7 +72,7 @@ Copyright (c) 2013 [FreeRunning Technologies][8] & [Tobias Bohwalli][9], release
 [3]: http://www.fsf.org/licensing/essays/free-sw.html
 [4]: https://github.com/futhr/spree-dibs/issues
 [5]: https://github.com/thoughtbot/guide
-[6]: https://github.com/futhr/spree-dibs/tree/master/LICENSE
+[6]: https://github.com/futhr/spree-dibs/tree/master/LICENSE.md
 [7]: https://github.com/DylanJ
 [8]: https://github.com/freerunningtechnologies
 [9]: https://github.com/futhr
