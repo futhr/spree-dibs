@@ -8,10 +8,10 @@
 
 ## Installation
 
-Add spree_dibs and this branch of active merchant to your Gemfile:
+Add spree_dibs and this branch of active merchant to your `Gemfile`:
 
 ```ruby
-gem 'spree_dibs', github: 'futhr/spree-dibs'
+gem 'spree_dibs', github: 'futhr/spree-dibs', branch: '2-0-stable'
 gem 'activemerchant', github: 'futhr/active_merchant', branch: 'dibspayment'
 ```
 
