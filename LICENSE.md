@@ -1,4 +1,4 @@
-Copyright (c) 2013 FreeRunning Technologies & Tobias Bohwalli
+Copyright (c) 2013 FreeRunning Technologies, Tobias Bohwalli and other contributors.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

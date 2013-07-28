@@ -8,7 +8,7 @@
 
 ## Installation
 
-Add spree_dibs and this branch of active merchant to your `Gemfile`:
+Add spree_dibs and this branch of active merchant to your `Gemfile`
 
 ```ruby
 gem 'spree_dibs', github: 'futhr/spree-dibs', branch: '2-0-stable'
@@ -65,7 +65,7 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2013 [FreeRunning Technologies][8] & [Tobias Bohwalli][9], released under the [New BSD License][6]
+Copyright (c) 2013 [FreeRunning Technologies][8], [Tobias Bohwalli][9] and other [contributors][10], released under the [New BSD License][6]
 
 [1]: https://raw.github.com/futhr/spree-dibs/master/dibs.png
 [2]: http://www.dibspayment.com
@@ -76,3 +76,4 @@ Copyright (c) 2013 [FreeRunning Technologies][8] & [Tobias Bohwalli][9], release
 [7]: https://github.com/DylanJ
 [8]: https://github.com/freerunningtechnologies
 [9]: https://github.com/futhr
+[10]: https://github.com/futhr/spree-dibs/contributors
