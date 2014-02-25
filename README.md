@@ -3,6 +3,8 @@
 # Spree Payment Gateway for DIBS
 
 [![Dependency Status](https://gemnasium.com/futhr/spree-dibs.png)](https://gemnasium.com/futhr/spree-dibs)
+[![Code Climate](https://codeclimate.com/github/futhr/spree-dibs.png)](https://codeclimate.com/github/futhr/spree-dibs)
+[![Gitter chat](https://badges.gitter.im/futhr/spree-dibs.png)](https://gitter.im/futhr/spree-dibs)
 
 [DIBS Payment Services][2], the largest provider of Internet payment solutions in Northern Europe.
 
@@ -65,7 +67,7 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2013 [FreeRunning Technologies][8], [Tobias Bohwalli][9] and other [contributors][10], released under the [New BSD License][6]
+Copyright (c) 2014 [FreeRunning Technologies][8], [Tobias Bohwalli][9] and other [contributors][10], released under the [New BSD License][6]
 
 [1]: https://raw.github.com/futhr/spree-dibs/master/dibs.png
 [2]: http://www.dibspayment.com
