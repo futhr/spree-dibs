@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'spree_core', '~> 2.0'
 
   s.add_development_dependency 'factory_girl', '~> 4.2'
-  s.add_development_dependency 'rspec-rails',  '~> 2.13'
-  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'rspec-rails',  '~> 2.14'
+  s.add_development_dependency 'database_cleaner',  '> 1.0.1'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
