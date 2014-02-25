@@ -13,7 +13,7 @@
 Add spree_dibs and this branch of active merchant to your `Gemfile`
 
 ```ruby
-gem 'spree_dibs', github: 'futhr/spree-dibs', branch: '2-0-stable'
+gem 'spree_dibs', github: 'futhr/spree-dibs', branch: 'master'
 gem 'activemerchant', github: 'futhr/active_merchant', branch: 'dibspayment'
 ```
 

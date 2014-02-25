@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'nokogiri', '< 1.6.0'
 
-gem 'spree', github: 'spree/spree', branch: '2-0-stable'
+gem 'spree', github: 'spree/spree', branch: 'master'
 
 # provides basic authentication functionality for testing parts of your engine
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
