@@ -17,6 +17,8 @@ gem 'spree_dibs', github: 'futhr/spree-dibs', branch: 'master'
 gem 'activemerchant', github: 'futhr/active_merchant', branch: 'dibspayment'
 ```
 
+**NOTE** _This cannot be used with official `active_merchant` gem due to that the DIBS gateway was never merged. This because DIBS do not have a sandbox to run CI tests against.
+
 ### Heroku SSL gotcha
 
 To make this work if you deploy on Heroku you need to add this to your Rails app in `config/initialzers/dibs.rb`.
@@ -35,8 +37,6 @@ Net::HTTP.class_eval do
   end
 end
 ```
-
-Thanks! [@DylanJ][7] for this hack :)
 
 ## Contributing
 

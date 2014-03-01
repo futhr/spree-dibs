@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author       = 'FreeRunning Technologies'
+  s.authors      = ['FreeRunning Technologies', 'Tobias Bohwalli']
   s.email        = 'contact@freerunningtech.com'
   s.homepage     = 'http://freerunningtech.com'
   s.license      = %q{BSD-3}
@@ -21,12 +21,12 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'spree_core', '~> 2.2.beta'
+  s.add_runtime_dependency 'spree_core', '~> 2.2.0'
 
-  s.add_development_dependency 'factory_girl', '~> 4.2'
+  s.add_development_dependency 'factory_girl', '~> 4.4'
   s.add_development_dependency 'rspec-rails',  '~> 2.14'
-  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'database_cleaner', '~> 1.2.0'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'simplecov', '~> 0.7.1'
   s.add_development_dependency 'sqlite3'
 end
