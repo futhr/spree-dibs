@@ -7,14 +7,14 @@ describe Spree::Gateway::Dibs do
   let(:password) { DIBS_CONFIG['hmackey'] }
 
   before do
-    @gateway = Spree::Gateway::Dibs.create!(name: 'DIBS', environment: 'test', active: true)
+    @gateway = described_class.create!(name: 'DIBS', environment: 'test', active: true)
     @gateway.set_preference(:login, login)
     @gateway.set_preference(:password, password)
     @gateway.save!
 
-    @country = create(:country, name: 'United States', iso_name: 'UNITED STATES', iso3: 'USA', iso: 'US', numcode: 840)
-    @state   = create(:state, name: 'Maryland', abbr: 'MD', country: @country)
-    @address = create(:address,
+    country = create(:country, name: 'United States', iso_name: 'UNITED STATES', iso3: 'USA', iso: 'US', numcode: 840)
+    state   = create(:state, name: 'Maryland', abbr: 'MD', country: country)
+    address = create(:address,
       firstname: 'John',
       lastname: 'Doe',
       address1: '1234 My Street',
@@ -26,7 +26,7 @@ describe Spree::Gateway::Dibs do
       country: @country
     )
 
-    @order = create(:order_with_totals, bill_address: @address, ship_address: @address, last_ip_address: '127.0.0.1')
+    @order = create(:order_with_totals, bill_address: address, ship_address: address, last_ip_address: '127.0.0.1')
     @order.update!
 
     # this card info is from http://tech.dibs.dk/10_step_guide/your_own_test/
@@ -43,17 +43,17 @@ describe Spree::Gateway::Dibs do
 
     @options = {
       order_id: @order.number + '-' + DateTime.current.to_i.to_s,
-      billing_address: @address,
+      billing_address: address,
       description: 'Store Purchase',
       currency: 'USD'
     }
   end
 
-  it 'provider_class' do
+  it '.provider_class' do
     expect(@gateway.provider_class).to eq ::ActiveMerchant::Billing::DibsGateway
   end
 
-  it 'actions' do
+  it '.actions' do
     expect(@gateway.actions).to match_array ['authorize', 'capture', 'refund', 'credit', 'void']
   end
 
@@ -64,14 +64,14 @@ describe Spree::Gateway::Dibs do
     end
   end
 
-  context 'authorize' do
+  context '.authorize' do
     it 'return a success' do
       result = @gateway.authorize(10, @credit_card, @options)
       expect(result.success?).to be_true
     end
   end
 
-  context 'capture' do
+  context '.capture' do
     it 'capture a previous authorization' do
       @payment.process!
       capture_result = @gateway.capture(10, @payment.response_code, nil)
