@@ -6,14 +6,14 @@ require 'spree_dibs/version'
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_dibs'
-  s.version     = SpreeDibs::VERSION
+  s.version     = SpreeDibs.version
   s.summary     = 'Spree Payment Gateway for DIBS'
   s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
 
-  s.authors      = ['FreeRunning Technologies', 'Tobias Bohwalli']
-  s.email        = 'contact@freerunningtech.com'
-  s.homepage     = 'http://freerunningtech.com'
+  s.authors      = ['Tobias Bohwalli', 'FreeRunning Technologies']
+  s.email        = 'hi@futhr.io'
+  s.homepage     = 'https://github.com/futhr/spree-dibs'
   s.license      = %q{BSD-3}
 
   s.files        = `git ls-files`.split("\n")
